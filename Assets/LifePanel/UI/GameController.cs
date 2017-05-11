@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lifepanel.UpdateLife(user.getLife());
+        //lifepanel.UpdateLife(user.getHP());
 		if (ene1 == null && ene2 == null) {
 			Instantiate (win, loc.position, loc.rotation);
 		}

@@ -7,6 +7,6 @@ public class NewBehaviourScript4 : MonoBehaviour {
 
     public void scenechange1()
     {
-        SceneManager.LoadScene("Training");
+        SceneManager.LoadScene("scene/Training");
     }
 }

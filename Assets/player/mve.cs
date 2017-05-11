@@ -4,21 +4,67 @@ using UnityEngine;
 
 public class mve : MonoBehaviour {
 	public float speed=1f;
-    const int Defaultlife = 5;
-	public int life = Defaultlife;
-    public int getLife()
+    const int Defaultlife = 100;
+    public int maxHP = 100;
+    const int DefaultMP = 100;
+    public int maxMP = 100;
+	public bool cover = true;
+	public bool Left_state=false;
+	public bool Right_state=false;
+	public int mana_Recover=10;
+	public int HP = Defaultlife;
+    public int MP = DefaultMP;
+    public int getHP()
     {
-        return life;
+        return HP;
+    }
+    public int getMaxHP()
+    {
+        return maxHP;
+    }
+    public int getMP()
+    {
+        return MP;
+    }
+    public int getMaxMP()
+    {
+        return maxMP;
     }
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.RightArrow)) {
+		if (Input.GetKey (KeyCode.RightArrow)||Right_state) {
             MoveRight();
 		}
-		if (Input.GetKey (KeyCode.LeftArrow)) {
+		if (Input.GetKey (KeyCode.LeftArrow)||Left_state) {
             MoveLeft();
 		}
+		if (cover) {
+			Invoke ("Mana_cover", 2);
+			MP += 10;
+			cover = false;
+		}
+    }
+	void Mana_cover()
+	{
+		cover = true;
 	}
+	public void L_state(bool state)
+	{
+		Left_state = state;
+	}
+	public void R_state(bool state)
+	{
+		Right_state = state;
+	}
+    public void UseSkill1(int Mana)
+    {
+        MP -= Mana;
+    }
+    public void UseSkill2(int Mana)
+    {
+        MP -= Mana;
+    }
+    
     public void MoveLeft()
 	{
 		if (this.transform.localPosition.x > -13) {
@@ -37,8 +83,8 @@ public class mve : MonoBehaviour {
 	{
 		if (tan.tag == "enemy_tan") {
 			Destroy (tan.gameObject);
-			life=life-tan.gameObject.GetComponent<enemy_tan>().getDamage();
-			if (life <= 0) {
+			HP=HP-tan.gameObject.GetComponent<enemy_tan>().getDamage();
+			if (HP <= 0) {
 				Destroy (this.gameObject);
 			}
 		}

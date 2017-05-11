@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemy_tan : MonoBehaviour {
 	float speed=10f;
 	int type=1;
-	int damage = 1;
+	int damage = 30;
 	public void setType(int x)
 	{
 		type = x;

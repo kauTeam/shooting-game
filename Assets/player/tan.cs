@@ -5,11 +5,11 @@ using UnityEngine;
 public class tan : MonoBehaviour {
 
 	public float destroy_pos = 10f;
-	public float speed = 20f;
-	int damage=1;
+	public float speed;
+	float damage;
 
 	// Update is called once per frame
-	public void setDamage(int x)
+	public void setDamage(float x)
 	{
 		damage = x;
 	}
@@ -17,7 +17,7 @@ public class tan : MonoBehaviour {
 	{
 		speed = x;
 	}
-	public int getDamage()
+	public float getDamage()
 	{
 		return damage;
 	}

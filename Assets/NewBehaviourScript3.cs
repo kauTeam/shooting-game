@@ -7,6 +7,6 @@ public class NewBehaviourScript3 : MonoBehaviour {
 
     public void scenechange1()
     {
-        SceneManager.LoadScene("1_monster");
+		SceneManager.LoadScene("scene/2_monster");
     }
 }
