@@ -7,7 +7,7 @@ public class enemy_move : MonoBehaviour {
 
 	int movePoint=3;
 	public float speed=5f;
-	public const float MaxHp=100f;
+	public const float MaxHp=20f;
 	float life=MaxHp;
 	public GameObject result = null;
 	public Transform loc = null;

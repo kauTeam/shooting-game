@@ -20,7 +20,7 @@ public class shoot : MonoBehaviour {
 			damage = 30f;
 		}
 		if (PlayerPrefs.HasKey ("attack_speed")) {
-			attack_speed = PlayerPrefs.GetFloat ("attack_speed");
+			attack_speed = 1.5f-(PlayerPrefs.GetFloat ("attack_speed")*0.1f);
 		} else {
 			attack_speed = 1f;
 		}
@@ -37,7 +37,7 @@ public class shoot : MonoBehaviour {
 			Invoke ("set_shoot_state", attack_speed);
 			GameObject tan1=Instantiate (miss, loc.position, loc.rotation);
 			tan1.GetComponent<tan>().setDamage (damage);
-			tan1.GetComponent<tan>().setSpeed (tan_speed);
+			tan1.GetComponent<tan>().setSpeed (tan_speed*20);
 			shoot_state = false;
 			
 		}

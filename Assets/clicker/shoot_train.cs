@@ -13,16 +13,12 @@ public class shoot_train : MonoBehaviour {
 	public int level=1;
 	public int exp=0;
 	int save=1;
-	int point=0;
 	// Update is called once per frame
 
 	void Awake()
 	{
 		if (PlayerPrefs.HasKey ("lv")) {
 			level = PlayerPrefs.GetInt ("lv");
-		}
-		if (PlayerPrefs.HasKey ("point")) {
-			point = PlayerPrefs.GetInt ("point");
 		}
 		if (PlayerPrefs.HasKey ("exp")) {
 			exp = PlayerPrefs.GetInt ("exp");
@@ -47,9 +43,10 @@ public class shoot_train : MonoBehaviour {
 		}
 		if (exp == level * 10) 
 		{
+			int point = PlayerPrefs.GetInt ("point");
 			exp = 0;
 			level++;
-			point++;
+			point+=3;
 			PlayerPrefs.SetInt ("point", point);
 		}
 		if (save == 10) {
