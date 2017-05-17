@@ -9,7 +9,8 @@ public class GameController : MonoBehaviour
     public LifePanel lifepanel;
 	public GameObject ene1 =null;
 	public GameObject ene2 =null;
-	public GameObject player =null;
+    public GameObject ene3 = null;
+    public GameObject player =null;
 	public GameObject lose = null;
 	public GameObject win = null;
 
