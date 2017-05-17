@@ -19,7 +19,7 @@ public class NewBehaviourScript3 : MonoBehaviour {
     }
     public void gotoState()
     {
-        SceneManager.LoadScene("scene/state scene");
+        SceneManager.LoadScene("scene/states");
     }
     public void returnMain()
     {
