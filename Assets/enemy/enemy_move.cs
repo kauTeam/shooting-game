@@ -11,8 +11,9 @@ public class enemy_move : MonoBehaviour {
 	float life=MaxHp;
 	public GameObject result = null;
 	public Transform loc = null;
-	// Update is called once per frame
-	public float getHP()
+    public ParticleSystem explosion;
+    // Update is called once per frame
+    public float getHP()
 	{
 		return life;
 	}
@@ -39,7 +40,8 @@ public class enemy_move : MonoBehaviour {
 			Destroy (tan.gameObject);
 			life=life-tan.gameObject.GetComponent<tan>().getDamage();
 			if (life < 0) {
-				Destroy (this.gameObject);	
+				Destroy (this.gameObject);
+                Instantiate(explosion, transform.position, Quaternion.identity);	
 //				SceneManager.LoadScene("2_monster");
 			}
 		}

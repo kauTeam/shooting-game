@@ -10,8 +10,9 @@ public class shoot : MonoBehaviour {
 	public float damage;
 	public float tan_speed;
 	bool shoot_state=true;
-	// Update is called once per frame
-	void Start()
+
+    // Update is called once per frame
+    void Start()
 	{
 		if (PlayerPrefs.HasKey ("Damage")) {
 			damage = PlayerPrefs.GetFloat ("Damage");

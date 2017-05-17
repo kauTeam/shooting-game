@@ -9,7 +9,8 @@ public class enemy_shoot : MonoBehaviour {
 	public Transform loc = null;
 	public float attack_speed=1f;
 	bool shoot_state=true;
-	// Update is called once per frame
+    // Update is called once per frame
+    
 	void Update () 
 	{
 		if (shoot_state) 
