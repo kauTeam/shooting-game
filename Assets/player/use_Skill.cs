@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class use_Skill : MonoBehaviour {
 
-	// Use this for initialization
-	public GameObject shild=null;
+    // Use this for initialization
+    public GameObject HellFire = null;
+    public Transform HellFire_pos1 = null;
+    public Transform HellFire_pos2 = null;
+    public Transform HellFire_pos3 = null;
+    public GameObject shild=null;
 	public Transform shild_pos=null;
 	int attack_Type;
 	int defend_Type;
@@ -25,12 +29,16 @@ public class use_Skill : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	}
+
 	public void attack()
 	{
 		switch (attack_Type) {
 		case 1:
 			{
-				break;
+                Instantiate(HellFire, HellFire_pos1.position, HellFire_pos1.rotation);
+                Instantiate(HellFire, HellFire_pos2.position, HellFire_pos2.rotation);
+                Instantiate(HellFire, HellFire_pos3.position, HellFire_pos3.rotation);
+                break;
 			}
 		}
 	}

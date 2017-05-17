@@ -34,7 +34,7 @@ public class shoot : MonoBehaviour {
 	{
 		if (shoot_state) 
 		{
-			Invoke ("set_shoot_state", attack_speed);
+			//Invoke ("set_shoot_state", attack_speed);
 			GameObject tan1=Instantiate (miss, loc.position, loc.rotation);
 			tan1.GetComponent<tan>().setDamage (damage);
 			tan1.GetComponent<tan>().setSpeed (tan_speed);
