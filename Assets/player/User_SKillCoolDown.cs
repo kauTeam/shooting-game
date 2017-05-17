@@ -35,6 +35,7 @@ public class User_SKillCoolDown : MonoBehaviour {
 		{
 			if (skills[0].currentCoolDown >= skills[0].cooldown)
 			{
+                player.gameObject.GetComponent<use_Skill>().attack();
 				player.gameObject.GetComponent<mve>().UseSkill1(30);
 				skills[0].currentCoolDown = 0;
 			}

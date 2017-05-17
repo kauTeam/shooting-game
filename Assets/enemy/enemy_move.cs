@@ -43,5 +43,15 @@ public class enemy_move : MonoBehaviour {
 //				SceneManager.LoadScene("2_monster");
 			}
 		}
+        if (tan.tag == "HellFire")
+        {
+            Destroy(tan.gameObject);
+            life = life - tan.gameObject.GetComponent<HellFire>().getHellFire_Damage();
+            if (life < 0)
+            {
+                Destroy(this.gameObject);
+                //				SceneManager.LoadScene("2_monster");
+            }
+        }
 	}
 }
