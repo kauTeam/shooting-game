@@ -1,0 +1,19 @@
+레벨 lv
+경험치 exp
+스텟포인트 point
+
+
+현재 데미지 Damage
+맥스 데미지 Max_Dmage
+현재 공속 attack_speed
+맥스 공속 Max_attack_speed
+현재 마나 Mana
+맥스 마나 Max_Mana
+현재 마나 재생량 Mana_re
+맥스 마나 재생량 Max_Mana_re
+현재 최대체력 Hp
+맥스 최대체력 Max_Hp
+탄속 tan_speed
+
+돈 coin
+
