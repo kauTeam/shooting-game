@@ -39,21 +39,30 @@ public class enemy_move : MonoBehaviour {
 		if (tan.tag == "user_tan") {
 			Destroy (tan.gameObject);
 			life=life-tan.gameObject.GetComponent<tan>().getDamage();
-			if (life < 0) {
-				Destroy (this.gameObject);
-                Instantiate(explosion, transform.position, Quaternion.identity);	
-//				SceneManager.LoadScene("2_monster");
-			}
+//			if (life < 0) {
+//				Destroy (this.gameObject);
+//                Instantiate(explosion, transform.position, Quaternion.identity);	
+////				SceneManager.LoadScene("2_monster");
+//			}
 		}
         if (tan.tag == "HellFire")
         {
             Destroy(tan.gameObject);
             life = life - tan.gameObject.GetComponent<HellFire>().getHellFire_Damage();
-            if (life < 0)
-            {
-                Destroy(this.gameObject);
-                //				SceneManager.LoadScene("2_monster");
-            }
+            //if (life < 0)
+            //{
+            //    Destroy(this.gameObject);
+            //    Instantiate(explosion, transform.position, Quaternion.identity);
+            //    //				
+            //    //				SceneManager.LoadScene("2_monster");
+            //}
         }
-	}
+        if (life < 0)
+        {
+            Destroy(this.gameObject);
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            //				
+            //				SceneManager.LoadScene("2_monster");
+        }
+    }
 }

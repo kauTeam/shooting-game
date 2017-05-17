@@ -8,7 +8,8 @@ public class User_SKillCoolDown : MonoBehaviour {
     public List<Skill> skills;
     public int mana;
     public GameObject player;
-    
+    public ParticleSystem skill_on;
+    public bool Skill_State = false;
     // Use this for initialization
     void Start () {
         foreach (Skill s in skills)
@@ -38,7 +39,8 @@ public class User_SKillCoolDown : MonoBehaviour {
                 player.gameObject.GetComponent<use_Skill>().attack();
 				player.gameObject.GetComponent<mve>().UseSkill1(30);
 				skills[0].currentCoolDown = 0;
-			}
+                //Instantiate(skill_on, player.gameObject.transform.position, Quaternion.identity);
+            }
 		}
 	}
 	public void skill2()
@@ -64,6 +66,7 @@ public class User_SKillCoolDown : MonoBehaviour {
                 s.skillIcon.fillAmount = s.currentCoolDown/s.cooldown;
             }
         }
+
     }
 }
 
