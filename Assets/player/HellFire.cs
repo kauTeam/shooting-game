@@ -19,9 +19,9 @@ public class HellFire : MonoBehaviour
         }
         else
         {
-            Damage = 70f;
+            Damage = 40f;
         }
-        Speed = 2f;
+        Speed = 4f;
     }
 
     void setHellFire_Damage(float input_Damage)
@@ -36,9 +36,16 @@ public class HellFire : MonoBehaviour
     void Update()
     {
        this.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * Speed);
-       if (this.transform.position.y < 0)
+       if (this.transform.position.y < 4.5)
        {
            Destroy(this.gameObject);
        }
+    }
+    void OnTriggerEnter(Collider tan)
+    {
+        if (tan.tag == "Terrain")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

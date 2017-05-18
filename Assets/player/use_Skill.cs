@@ -9,6 +9,8 @@ public class use_Skill : MonoBehaviour {
     public Transform HellFire_pos1 = null;
     public Transform HellFire_pos2 = null;
     public Transform HellFire_pos3 = null;
+    public Transform HellFire_pos4 = null;
+    public Transform HellFire_pos5 = null;
     public GameObject shild=null;
 	public Transform shild_pos=null;
 	int attack_Type;
@@ -38,7 +40,10 @@ public class use_Skill : MonoBehaviour {
                 Instantiate(HellFire, HellFire_pos1.position, HellFire_pos1.rotation);
                 Instantiate(HellFire, HellFire_pos2.position, HellFire_pos2.rotation);
                 Instantiate(HellFire, HellFire_pos3.position, HellFire_pos3.rotation);
-                break;
+                Instantiate(HellFire, HellFire_pos4.position, HellFire_pos4.rotation);
+                Instantiate(HellFire, HellFire_pos5.position, HellFire_pos5.rotation);
+
+                    break;
 			}
 		}
 	}
