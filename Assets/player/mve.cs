@@ -11,7 +11,7 @@ public class mve : MonoBehaviour {
 	public bool cover = true;
 	public bool Left_state=false;
 	public bool Right_state=false;
-	public int mana_Recover=10;
+	public int mana_Recover=3;
 	public int HP = Defaultlife;
     public int MP = DefaultMP;
     public int getHP()
@@ -40,7 +40,10 @@ public class mve : MonoBehaviour {
 		}
 		if (cover) {
 			Invoke ("Mana_cover", 2);
-			MP += 10;
+			MP += mana_Recover;
+			if (MP > maxMP) {
+				MP = maxMP;
+			}
 			cover = false;
 		}
     }

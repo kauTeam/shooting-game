@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -22,9 +23,11 @@ public class GameController : MonoBehaviour
         //lifepanel.UpdateLife(user.getHP());
 		if (ene1 == null && ene2 == null) {
 			Instantiate (win, loc.position, loc.rotation);
+			SceneManager.LoadScene("scene/main scene");
 		}
 		if (player== null) {
 			Instantiate (lose, loc.position, loc.rotation);
+			SceneManager.LoadScene("scene/main scene");
 		}
 
     }

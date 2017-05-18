@@ -1,0 +1,45 @@
+---------
+레벨 lv
+경험치 exp
+스텟포인트 point
+----레벨관련
+
+
+==========스텟관련
+현재 데미지 Damage
+맥스 데미지 Max_Dmage
+현재 공속 attack_speed
+맥스 공속 Max_attack_speed
+현재 마나 Mana
+맥스 마나 Max_Mana
+현재 마나 재생량 Mana_re
+맥스 마나 재생량 Max_Mana_re
+현재 최대체력 Hp
+맥스 최대체력 Max_Hp
+탄속 tan_speed
+===============
+
+========재화관련
+돈 coin
+소울 soul
+===================
+=========장착스킬
+attack
+defence
+===============
+
+
+스킬레벨==========
+Meteor
+Poison
+FireBall
+IceGun
+HellDrop
+
+Barrier
+Shild
+Heal
+Dot_heal
+Reflect
+==================
+
