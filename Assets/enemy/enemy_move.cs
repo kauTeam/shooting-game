@@ -61,6 +61,8 @@ public class enemy_move : MonoBehaviour {
         {
             Destroy(this.gameObject);
             Instantiate(explosion, transform.position, Quaternion.identity);
+			int coin = PlayerPrefs.GetInt ("coin");
+			PlayerPrefs.SetInt ("coin", coin + (int)MaxHp);
             //				
             //				SceneManager.LoadScene("2_monster");
         }
