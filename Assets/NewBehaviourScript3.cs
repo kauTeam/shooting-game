@@ -21,6 +21,10 @@ public class NewBehaviourScript3 : MonoBehaviour {
     {
         SceneManager.LoadScene("scene/states");
     }
+	public void gotoShop()
+	{
+		SceneManager.LoadScene("scene/shop");
+	}
     public void returnMain()
     {
         SceneManager.LoadScene("scene/main scene");
