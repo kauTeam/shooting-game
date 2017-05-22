@@ -42,7 +42,7 @@ public class NewBehaviourScript3 : MonoBehaviour {
 		PlayerPrefs.SetFloat ("Hp", 1f);
 		PlayerPrefs.SetFloat ("Max_Hp", 5f);
 
-		PlayerPrefs.SetInt ("coin", 0);
+		PlayerPrefs.SetInt ("coin", 1000);
 		PlayerPrefs.SetInt ("soul", 0);
 
 		PlayerPrefs.SetInt ("attack", 1);
