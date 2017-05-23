@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class NewBehaviourScript3 : MonoBehaviour {
 
+    Color _fadeColor = new Color(0f, 0f, 0f, 1f);
     public void gotoDungeon()
     {
-		SceneManager.LoadScene("scene/2_monster");
+        Autofade.LoadLevel("scene/2_monster", 1, 1, _fadeColor);
     }
     public void gotoDungeon2()
     {
-        SceneManager.LoadScene("scene/1_monster");
+        Autofade.LoadLevel("scene/1_monster", 1, 1, _fadeColor);
     }
     public void gotoTraining()
     {
@@ -29,7 +30,11 @@ public class NewBehaviourScript3 : MonoBehaviour {
     {
         SceneManager.LoadScene("scene/main scene");
     }
-	public void reset()
+    public void returnfadeMain()
+    {
+        Autofade.LoadLevel("scene/main scene", 1, 1, _fadeColor);
+    }
+    public void reset()
 	{
 		PlayerPrefs.SetInt ("lv",1);
 		PlayerPrefs.SetInt ("exp", 1);

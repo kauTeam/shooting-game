@@ -4,32 +4,21 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour {
-    // Use this for initialization
-
-    void Start()
-    {
-
-
-
-    }
-
-
-
-    // Update is called once per frame
 
     void Update()
 	{
 		Invoke ("changeScene", 2);   
         if (Input.GetKey(KeyCode.Return))
         {
-
-			SceneManager.LoadScene("start1 scene");
+            Color _fadeColor = new Color(0f, 0f, 0f, 1f);
+            Autofade.LoadLevel("start1 scene", 1, 1, _fadeColor);
         }
         /* 엔터키를 누르면 main 신을 불러오라는 의미 */
     }
 	void changeScene()
 	{
-		SceneManager.LoadScene("start1 scene");
-	}
+        Color _fadeColor = new Color(0f, 0f, 0f, 1f);
+        Autofade.LoadLevel("start1 scene", 1, 1, _fadeColor);
+    }
 
 }
