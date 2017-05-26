@@ -11,8 +11,10 @@ public class use_Skill : MonoBehaviour {
     public Transform HellFire_pos3 = null;
     public Transform HellFire_pos4 = null;
     public Transform HellFire_pos5 = null;
+    public GameObject player = null;
     public GameObject shild=null;
 	public Transform shild_pos=null;
+
 	int attack_Type;
 	int defend_Type;
 	void Start () {
@@ -35,16 +37,21 @@ public class use_Skill : MonoBehaviour {
 	public void attack()
 	{
 		switch (attack_Type) {
-		case 1:
+		case 2:
 			{
-                Instantiate(HellFire, HellFire_pos1.position, HellFire_pos1.rotation);
-                Instantiate(HellFire, HellFire_pos2.position, HellFire_pos2.rotation);
-                Instantiate(HellFire, HellFire_pos3.position, HellFire_pos3.rotation);
-                Instantiate(HellFire, HellFire_pos4.position, HellFire_pos4.rotation);
-                Instantiate(HellFire, HellFire_pos5.position, HellFire_pos5.rotation);
+                    Instantiate(HellFire, HellFire_pos1.position, HellFire_pos1.rotation);
+                    Instantiate(HellFire, HellFire_pos2.position, HellFire_pos2.rotation);
+                    Instantiate(HellFire, HellFire_pos3.position, HellFire_pos3.rotation);
+                    Instantiate(HellFire, HellFire_pos4.position, HellFire_pos4.rotation);
+                    Instantiate(HellFire, HellFire_pos5.position, HellFire_pos5.rotation);
 
                     break;
 			}
+        case 1:
+              {
+                    shoot_poison();
+                    break;
+              }
 		}
 	}
 	public void defend()
@@ -57,6 +64,12 @@ public class use_Skill : MonoBehaviour {
 			}
 		}
 	}
+
+    public void shoot_poison()
+    {
+        player.gameObject.GetComponent<shoot>().set_Poison_state();
+    }
+    
 }
 
 
