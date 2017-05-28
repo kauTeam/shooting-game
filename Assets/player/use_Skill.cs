@@ -37,7 +37,7 @@ public class use_Skill : MonoBehaviour {
 	public void attack()
 	{
 		switch (attack_Type) {
-		case 2:
+		case 1:
 			{
                     Instantiate(HellFire, HellFire_pos1.position, HellFire_pos1.rotation);
                     Instantiate(HellFire, HellFire_pos2.position, HellFire_pos2.rotation);
@@ -47,7 +47,7 @@ public class use_Skill : MonoBehaviour {
 
                     break;
 			}
-        case 1:
+        case 2:
               {
                     player.GetComponent<shoot>().set_Poison_state();
                     break;

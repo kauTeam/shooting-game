@@ -22,11 +22,10 @@ public class shoot : MonoBehaviour
         if (PlayerPrefs.HasKey("Damage"))
         {
             damage = PlayerPrefs.GetFloat("Damage");
-            damage = 5f;
         }
         else
         {
-            damage = 5f;
+            damage = 10f;
         }
         if (PlayerPrefs.HasKey("attack_speed"))
         {
@@ -61,7 +60,7 @@ public class shoot : MonoBehaviour
             if (shoot_Poison)
             {
                 Invoke("set_shoot_state", attack_speed);
-                Invoke("set_Poison_state1", 20f);
+                Invoke("set_Poison_state1", 3f);
                 GameObject tan = Instantiate(Poison, loc.position, loc.rotation);
                 tan.gameObject.GetComponent<Poison>().setDamage(damage);
                 tan.gameObject.GetComponent<Poison>().setSpeed(tan_speed*20);
