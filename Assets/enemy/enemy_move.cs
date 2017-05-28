@@ -9,8 +9,9 @@ public class enemy_move : MonoBehaviour {
 	public float speed=5f;
 	public const float MaxHp=20f;
 	float life=MaxHp;
+    float poison_damage;
 	public GameObject result = null;
-	public Transform loc = null;
+    public Transform loc = null;
     public ParticleSystem explosion;
     public int check_Poison_count = 0; 
     // Update is called once per frame
@@ -61,7 +62,8 @@ public class enemy_move : MonoBehaviour {
         if(tan.tag == "Poison_tan")
         {
             Destroy(tan.gameObject);
-            life = life - tan.gameObject.GetComponent<Poison>().getDamage();
+            poison_damage = tan.gameObject.GetComponent<Poison>().getDamage();
+            life = life - poison_damage;
             check_Poison_count = 0;
             Invoke("hit_Poison_tan", 1f);
         }
@@ -76,10 +78,10 @@ public class enemy_move : MonoBehaviour {
         }
     }
 
-    void hit_Poision_tan()
+    void hit_Poison_tan()
     {
-        life -= this.gameObject.GetComponent<Poison>().getDamage();
-        if (check_Poison_count < 3)
+        life -= poison_damage;
+        if (check_Poison_count < 1)
         {
             check_Poison_count++;
             Invoke("hit_Poison_tan", 1f);

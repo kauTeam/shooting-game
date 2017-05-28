@@ -6,8 +6,7 @@ public class shoot : MonoBehaviour
 {
 
     public GameObject miss = null;
-    public GameObject Poison_tan = null;
-    public GameObject player = null;
+    public GameObject Poison = null;
     public Transform loc = null;
     public float attack_speed;
     public float damage;
@@ -23,10 +22,11 @@ public class shoot : MonoBehaviour
         if (PlayerPrefs.HasKey("Damage"))
         {
             damage = PlayerPrefs.GetFloat("Damage");
+            damage = 5f;
         }
         else
         {
-            damage = 30f;
+            damage = 5f;
         }
         if (PlayerPrefs.HasKey("attack_speed"))
         {
@@ -50,28 +50,23 @@ public class shoot : MonoBehaviour
         }
         else
         {
-            set_poison_time = 5f;
+            set_poison_time = 0.1f;
         }
     }
     void Update()
     {
         if (shoot_state)
         {
-            print("here");
             print(shoot_Poison);
             if (shoot_Poison)
             {
                 Invoke("set_shoot_state", attack_speed);
-                GameObject tan_poison = Instantiate(Poison_tan, loc.position, loc.rotation);
-                tan_poison.GetComponent<Poison>().setDamage(damage);
-                tan_poison.GetComponent<Poison>().setSpeed(tan_speed * 20);
+                Invoke("set_Poison_state1", 20f);
+                GameObject tan = Instantiate(Poison, loc.position, loc.rotation);
+                tan.gameObject.GetComponent<Poison>().setDamage(damage);
+                tan.gameObject.GetComponent<Poison>().setSpeed(tan_speed*20);
                 shoot_state = false;
-                poison_time += Time.deltaTime;
-                if (poison_time > set_poison_time)
-                {
-                    shoot_Poison = false;
-                    poison_time = 0;
-                }
+                
             }
             else
             {
@@ -92,5 +87,9 @@ public class shoot : MonoBehaviour
     public void set_Poison_state()
     {
         shoot_Poison = true;
+    }
+    public void set_Poison_state1()
+    {
+        shoot_Poison = false;
     }
 }
