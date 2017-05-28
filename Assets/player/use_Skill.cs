@@ -18,13 +18,13 @@ public class use_Skill : MonoBehaviour {
 	int attack_Type;
 	int defend_Type;
 	void Start () {
-		if (PlayerPrefs.HasKey ("attack_sill")) {
-			attack_Type = PlayerPrefs.GetInt ("attack_sill");
+		if (PlayerPrefs.HasKey ("attack")) {
+			attack_Type = PlayerPrefs.GetInt ("attack");
 		} else {
 			attack_Type = 1;
 		}
-		if (PlayerPrefs.HasKey ("defend_skill")) {
-			defend_Type = PlayerPrefs.GetInt ("defend_skill");
+		if (PlayerPrefs.HasKey ("defence")) {
+			defend_Type = PlayerPrefs.GetInt ("defence");
 		} else {
 			defend_Type = 1;
 		}
