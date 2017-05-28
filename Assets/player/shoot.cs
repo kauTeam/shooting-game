@@ -57,6 +57,8 @@ public class shoot : MonoBehaviour
     {
         if (shoot_state)
         {
+            print("here");
+            print(shoot_Poison);
             if (shoot_Poison)
             {
                 Invoke("set_shoot_state", attack_speed);

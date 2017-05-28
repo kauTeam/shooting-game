@@ -11,8 +11,8 @@ public class use_Skill : MonoBehaviour {
     public Transform HellFire_pos3 = null;
     public Transform HellFire_pos4 = null;
     public Transform HellFire_pos5 = null;
-    public GameObject player = null;
     public GameObject shild=null;
+    public GameObject player = null;
 	public Transform shild_pos=null;
 
 	int attack_Type;
@@ -49,7 +49,7 @@ public class use_Skill : MonoBehaviour {
 			}
         case 1:
               {
-                    shoot_poison();
+                    player.GetComponent<shoot>().set_Poison_state();
                     break;
               }
 		}
@@ -64,11 +64,6 @@ public class use_Skill : MonoBehaviour {
 			}
 		}
 	}
-
-    public void shoot_poison()
-    {
-        player.gameObject.GetComponent<shoot>().set_Poison_state();
-    }
     
 }
 
