@@ -11,6 +11,7 @@ public class enemy_move : MonoBehaviour {
 	float life=MaxHp;
     float poison_damage;
     float FireBall_Damage;
+    float IceGun_Damage;
 	public GameObject result = null;
     public Transform loc = null;
     public ParticleSystem explosion;
@@ -73,6 +74,13 @@ public class enemy_move : MonoBehaviour {
             Destroy(tan.gameObject);
             FireBall_Damage = tan.gameObject.GetComponent<Fire_Ball>().FireBall_Damage();
             life -= FireBall_Damage;
+
+        }
+        if (tan.tag == "Ice_Gun")
+        {
+            Destroy(tan.gameObject);
+            IceGun_Damage = tan.gameObject.GetComponent<Ice_Gun>().IceGun_Damage();
+            life -= IceGun_Damage;
 
         }
         if (life < 0)

@@ -11,8 +11,15 @@ public class use_Skill : MonoBehaviour {
     public Transform HellFire_pos3 = null;
     public Transform HellFire_pos4 = null;
     public Transform HellFire_pos5 = null;
+
     public GameObject FireBall = null;
     public Transform FireBall_pos = null;
+
+    public GameObject IceGun = null;
+    public Transform IceGun_pos1 = null;
+    public Transform IceGun_pos2 = null;
+    public Transform IceGun_pos3 = null;
+
     public GameObject shild=null;
     public GameObject player = null;
 	public Transform shild_pos=null;
@@ -59,7 +66,15 @@ public class use_Skill : MonoBehaviour {
                     Instantiate(FireBall, FireBall_pos.position, FireBall_pos.rotation);
                     break;
                 }
-		}
+            case 4:
+                {
+                    Instantiate(IceGun, IceGun_pos1.position, IceGun_pos1.rotation);
+                    Instantiate(IceGun, IceGun_pos2.position, IceGun_pos2.rotation);
+                    Instantiate(IceGun, IceGun_pos3.position, IceGun_pos3.rotation);
+                    break;
+
+                }
+        }
 	}
 	public void defend()
 	{
