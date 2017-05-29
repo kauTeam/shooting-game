@@ -11,6 +11,8 @@ public class use_Skill : MonoBehaviour {
     public Transform HellFire_pos3 = null;
     public Transform HellFire_pos4 = null;
     public Transform HellFire_pos5 = null;
+    public GameObject FireBall = null;
+    public Transform FireBall_pos = null;
     public GameObject shild=null;
     public GameObject player = null;
 	public Transform shild_pos=null;
@@ -52,6 +54,11 @@ public class use_Skill : MonoBehaviour {
                     player.GetComponent<shoot>().set_Poison_state();
                     break;
               }
+            case 3:
+                {
+                    Instantiate(FireBall, FireBall_pos.position, FireBall_pos.rotation);
+                    break;
+                }
 		}
 	}
 	public void defend()

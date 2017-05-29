@@ -10,6 +10,7 @@ public class enemy_move : MonoBehaviour {
 	public const float MaxHp=20f;
 	float life=MaxHp;
     float poison_damage;
+    float FireBall_Damage;
 	public GameObject result = null;
     public Transform loc = null;
     public ParticleSystem explosion;
@@ -66,6 +67,13 @@ public class enemy_move : MonoBehaviour {
             life = life - poison_damage;
             check_Poison_count = 0;
             Invoke("hit_Poison_tan", 1f);
+        }
+        if(tan.tag == "Fire_Ball")
+        {
+            Destroy(tan.gameObject);
+            FireBall_Damage = tan.gameObject.GetComponent<Fire_Ball>().FireBall_Damage();
+            life -= FireBall_Damage;
+
         }
         if (life < 0)
         {
