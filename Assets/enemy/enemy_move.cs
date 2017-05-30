@@ -43,6 +43,11 @@ public class enemy_move : MonoBehaviour {
 		}
 	}
 
+    void back_speed()
+    {
+        speed = 5f;
+    }
+
 	void OnTriggerEnter(Collider tan)
 	{
 		if (tan.tag == "user_tan") {
@@ -86,7 +91,9 @@ public class enemy_move : MonoBehaviour {
             Destroy(tan.gameObject);
             IceGun_Damage = tan.gameObject.GetComponent<Ice_Gun>().IceGun_Damage();
             life -= IceGun_Damage;
-
+            speed = 2f;
+            Invoke("back_speed", 2f);
+            
         }
         if (life < 0)
         {
