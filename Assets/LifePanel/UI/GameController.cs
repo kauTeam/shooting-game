@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
         Color _fadeColor = new Color(0f, 0f, 0f, 1f);
 
         //lifepanel.UpdateLife(user.getHP());
-		if (ene2 == null) {
+		if (ene1==null  && ene2 == null) {
 			Instantiate (win, loc.position, loc.rotation);
             Autofade.LoadLevel("scene/main scene", 1, 1, _fadeColor);
 		}
