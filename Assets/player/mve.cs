@@ -14,22 +14,16 @@ public class mve : MonoBehaviour {
 	public int mana_Recover=3;
 	public int HP = Defaultlife;
     public int MP = DefaultMP;
-    public int getHP()
-    {
-        return HP;
-    }
-    public int getMaxHP()
-    {
-        return maxHP;
-    }
-    public int getMP()
-    {
-        return MP;
-    }
-    public int getMaxMP()
-    {
-        return maxMP;
-    }
+   
+
+	void Start()
+	{
+		maxHP = (int)(80f+PlayerPrefs.GetFloat ("Hp")*20);
+		maxMP = (int)(80f+PlayerPrefs.GetFloat ("Mana")*20);
+		mana_Recover = (int)(2f + PlayerPrefs.GetFloat ("Mana_re"));
+		MP = maxMP;
+		HP = maxHP;
+	}
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.RightArrow)||Right_state) {
@@ -80,6 +74,31 @@ public class mve : MonoBehaviour {
 			this.transform.Translate (new Vector3 (1, 0, 0) * speed * Time.deltaTime);
 		}
     }
+
+	public void heal(int x)
+	{
+		HP += x;
+		if (HP > maxHP) {
+			HP = maxHP;
+		}
+	}
+
+	public int getHP()
+	{
+		return HP;
+	}
+	public int getMaxHP()
+	{
+		return maxHP;
+	}
+	public int getMP()
+	{
+		return MP;
+	}
+	public int getMaxMP()
+	{
+		return maxMP;
+	}
 
 
     void OnTriggerEnter(Collider tan)

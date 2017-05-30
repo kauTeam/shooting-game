@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class enemy_tan : MonoBehaviour {
-	float speed=10f;
+	float speed=13f;
 	int type=1;
 	int damage = 30;
 	public void setType(int x)
@@ -43,34 +43,48 @@ public class enemy_tan : MonoBehaviour {
 			this.transform.Translate (new Vector3 (-1, 0, -1) * speed * Time.deltaTime);
 		}
 		if (type == 6) {
-			if (this.transform.position.z >10) {
+			if (this.transform.position.z >5) {
 				this.transform.Translate (new Vector3 (0, 0, -1) * speed * Time.deltaTime);
 			} else {
 				this.transform.Translate (new Vector3 (1, 0, -1) * speed * Time.deltaTime);
 			}
 		}
 		if (type == 7) {
-			if (this.transform.position.z >10) {
+			if (this.transform.position.z >5) {
 				this.transform.Translate (new Vector3 (0, 0, -1) * speed * Time.deltaTime);
 			} else {
 				this.transform.Translate (new Vector3 (-1, 0, -1) * speed * Time.deltaTime);
 			}
 		}
 		if (type == 8) {
-			if (this.transform.position.z <10) {
+			if (this.transform.position.z <5) {
 				this.transform.Translate (new Vector3 (0, 0, -1) * speed * Time.deltaTime);
 			} else {
 				this.transform.Translate (new Vector3 (1, 0, -1) * speed * Time.deltaTime);
 			}
 		}
 		if (type == 9) {
-			if (this.transform.position.z <10) {
+			if (this.transform.position.z <5) {
 				this.transform.Translate (new Vector3 (0, 0, -1) * speed * Time.deltaTime);
 			} else {
 				this.transform.Translate (new Vector3 (-1, 0, -1) * speed * Time.deltaTime);
 			}
 		}
-		if (this.transform.position.z < -20||this.transform.position.x< -10||this.transform.position.x > 10) {
+		if (type == 10) {
+			if (this.transform.position.z >5) {
+				this.transform.Translate (new Vector3 (0, 0, -1) * speed * Time.deltaTime);
+			} else {
+				this.transform.Translate (new Vector3 (0.5f, 0, -1) * speed * Time.deltaTime);
+			}
+		}
+		if (type == 11) {
+			if (this.transform.position.z >5) {
+				this.transform.Translate (new Vector3 (0, 0, -1) * speed * Time.deltaTime);
+			} else {
+				this.transform.Translate (new Vector3 (-0.5f, 0, -1) * speed * Time.deltaTime);
+			}
+		}
+		if (this.transform.position.z < -20||this.transform.position.x< -15||this.transform.position.x > 15) {
 			Destroy (this.gameObject);
 		}
 	}

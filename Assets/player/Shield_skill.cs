@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shild : MonoBehaviour {
+public class Shield_skill : MonoBehaviour {
 
-	// Use this for initialization
+	public Transform pos=null;
 	float gage;
 	float time;
 	// Update is called once per frame
 
-
 	void Start()
 	{
-		gage = 30f+PlayerPrefs.GetInt ("Shild_gage")*60f;
-		time = 2f+PlayerPrefs.GetInt ("Barrier")*0.2f;
+		gage = (float)(PlayerPrefs.GetInt ("Shild") * 50);
+		time = 1.5f+PlayerPrefs.GetInt ("Shild")*0.3f;
 	}
 
 
 	void Update () {
 		Invoke ("destroy", time);
+		this.transform.position = pos.position;
 	}
 	void OnTriggerEnter(Collider tan)
 	{
@@ -26,12 +26,12 @@ public class shild : MonoBehaviour {
 			Destroy (tan.gameObject);
 			gage=gage-tan.gameObject.GetComponent<enemy_tan>().getDamage();
 			if (gage <= 0) {
-				Destroy (this.gameObject);
+				this.gameObject.SetActive(false);
 			}
 		}
 	}
 	void destroy()
 	{
-		Destroy (this.gameObject);
+		this.gameObject.SetActive(false);
 	}
 }
