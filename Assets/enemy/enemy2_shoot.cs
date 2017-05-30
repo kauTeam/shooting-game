@@ -20,7 +20,6 @@ public class enemy2_shoot : MonoBehaviour {
 	{
 		for (int i = 0; i < type.Length; i++) {
 			if (type [i]) {
-				print (type_count);
 				vc [type_count] = i;
 				type_count++;
 			}

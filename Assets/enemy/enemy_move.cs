@@ -7,8 +7,8 @@ public class enemy_move : MonoBehaviour {
 
 	int movePoint=3;
 	public float speed=5f;
-	public const float MaxHp=20f;
-	float life=MaxHp;
+	public float MaxHp=20f;
+	float life;
     float poison_damage;
     float FireBall_Damage;
     float IceGun_Damage;
@@ -25,6 +25,11 @@ public class enemy_move : MonoBehaviour {
 	{
 		return MaxHp;
 	}
+	void Start()
+	{
+		life = MaxHp;
+	}
+
 	void Update () {
 		if (this.transform.position.x >movePoint+1||this.transform.position.x <movePoint-1) {
 			if (this.transform.position.x > movePoint) {
