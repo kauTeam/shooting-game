@@ -91,7 +91,7 @@ public class enemy_move : MonoBehaviour {
             Destroy(tan.gameObject);
             IceGun_Damage = tan.gameObject.GetComponent<Ice_Gun>().IceGun_Damage();
             life -= IceGun_Damage;
-            speed = 2f;
+            speed = 0f;
             Invoke("back_speed", 2f);
             
         }
