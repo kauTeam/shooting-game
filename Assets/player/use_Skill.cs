@@ -21,7 +21,7 @@ public class use_Skill : MonoBehaviour {
     public Transform FireBall_pos = null;
 
     public GameObject IceGun = null;
-    public Transform IceGun_pos1 = null;
+    public Transform IceGun_pos1 = null; 
     public Transform IceGun_pos2 = null;
     public Transform IceGun_pos3 = null;
 
