@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class enemy_move : MonoBehaviour {
 
-    public static enemy_move instance;
+
 	int movePoint=3;
 	public float speed=5f;
 	public float MaxHp=20f;
@@ -28,16 +28,16 @@ public class enemy_move : MonoBehaviour {
 	void Start()
 	{
 		life = MaxHp;
-    }
+	}
 
-  
-void Update () {
+	void Update () {
 		if (this.transform.position.x >movePoint+1||this.transform.position.x <movePoint-1) {
 			if (this.transform.position.x > movePoint) {
 				this.transform.Translate (new Vector3 (1, 0, 0) * -1 * speed * Time.deltaTime);
 			}
 			if (this.transform.position.x < movePoint) {
-				this.transform.Translate (new Vector3 (1, 0, 0) * speed * Time.deltaTime);
+				this.transform.Translate
+				(new Vector3 (1, 0, 0) * speed * Time.deltaTime);
 			}
 		} else {
 			movePoint = Random.Range (-15,15);
@@ -53,7 +53,7 @@ void Update () {
 	{
 		if (tan.tag == "user_tan") {
 			Destroy (tan.gameObject);
-            life =life-tan.gameObject.GetComponent<tan>().getDamage();
+			life=life-tan.gameObject.GetComponent<tan>().getDamage();
 //			if (life < 0) {
 //				Destroy (this.gameObject);
 //                Instantiate(explosion, transform.position, Quaternion.identity);	
@@ -92,7 +92,7 @@ void Update () {
             Destroy(tan.gameObject);
             IceGun_Damage = tan.gameObject.GetComponent<Ice_Gun>().IceGun_Damage();
             life -= IceGun_Damage;
-            speed = 0f;
+            speed = 2f;
             Invoke("back_speed", 2f);
             
         }
@@ -102,7 +102,9 @@ void Update () {
             Instantiate(explosion, transform.position, Quaternion.identity);
 			int coin = PlayerPrefs.GetInt ("coin");
 			PlayerPrefs.SetInt ("coin", coin + (int)MaxHp);
-            //				
+			int get_coin=PlayerPrefs.GetInt ("get_coin");
+			PlayerPrefs.SetInt ("get_coin", get_coin + (int)MaxHp);
+			//				
             //				SceneManager.LoadScene("2_monster");
         }
     }
