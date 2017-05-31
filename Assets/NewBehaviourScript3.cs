@@ -34,6 +34,14 @@ public class NewBehaviourScript3 : MonoBehaviour {
     {
         Autofade.LoadLevel("scene/main scene", 1, 1, _fadeColor);
     }
+    public void gostory1()
+    {
+        SceneManager.LoadScene("scene/storyboard");
+    }
+    public void gostory2()
+    {
+        SceneManager.LoadScene("scene/storyboard2");
+    }
     public void reset()
 	{
 		PlayerPrefs.SetInt ("lv",1);
