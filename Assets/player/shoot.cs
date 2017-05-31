@@ -21,7 +21,7 @@ public class shoot : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("Damage"))
         {
-            damage = PlayerPrefs.GetFloat("Damage");
+            damage = 2f+PlayerPrefs.GetFloat("Damage");
         }
         else
         {
@@ -62,7 +62,7 @@ public class shoot : MonoBehaviour
                 Invoke("set_Poison_state1", 3f);
                 GameObject tan = Instantiate(Poison, loc.position, loc.rotation);
                 tan.gameObject.GetComponent<Poison>().setDamage(damage);
-                tan.gameObject.GetComponent<Poison>().setSpeed(tan_speed*20);
+                tan.gameObject.GetComponent<Poison>().setSpeed(18+tan_speed*2);
                 shoot_state = false;
                 
             }
@@ -71,7 +71,7 @@ public class shoot : MonoBehaviour
                 Invoke("set_shoot_state", attack_speed);
                 GameObject tan1 = Instantiate(miss, loc.position, loc.rotation);
                 tan1.GetComponent<tan>().setDamage(damage);
-                tan1.GetComponent<tan>().setSpeed(tan_speed * 20);
+				tan1.GetComponent<tan>().setSpeed(18+tan_speed*2);
                 shoot_state = false;
             }
         }

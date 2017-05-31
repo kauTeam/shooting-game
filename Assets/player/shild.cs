@@ -12,16 +12,8 @@ public class shild : MonoBehaviour {
 
 	void Start()
 	{
-		if (PlayerPrefs.HasKey ("Shild_gage")) {
-			gage = PlayerPrefs.GetFloat ("Shild_gage");
-		} else {
-			gage = 100f;
-		}
-		if (PlayerPrefs.HasKey ("Shild_time")) {
-			time = PlayerPrefs.GetFloat ("Shild_time");
-		} else {
-			time = 3f;
-		}
+		gage = 30f+PlayerPrefs.GetInt ("Shild_gage")*60f;
+		time = 2f+PlayerPrefs.GetInt ("Barrier")*0.2f;
 	}
 
 

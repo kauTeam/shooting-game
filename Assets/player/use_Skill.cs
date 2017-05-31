@@ -12,6 +12,11 @@ public class use_Skill : MonoBehaviour {
     public Transform HellFire_pos4 = null;
     public Transform HellFire_pos5 = null;
 
+	public GameObject shield = null;
+	public GameObject Reflect = null;
+
+
+
     public GameObject FireBall = null;
     public Transform FireBall_pos = null;
 
@@ -38,7 +43,14 @@ public class use_Skill : MonoBehaviour {
 			defend_Type = 1;
 		}
 	}
-	
+
+
+	void DotHeal()
+	{
+		int heal = PlayerPrefs.GetInt ("DotHeal")*5;
+		player.GetComponent<mve> ().heal (heal);
+	}
+
 	// Update is called once per frame
 	void Update () {
 	}
@@ -82,6 +94,36 @@ public class use_Skill : MonoBehaviour {
 		case 1:
 			{
 				Instantiate (shild, shild_pos.position, shild_pos.rotation);
+				break;
+			}
+		case 2:
+			{
+				shield.SetActive (true);
+				break;
+			}
+		case 3:
+			{
+				int heal = PlayerPrefs.GetInt ("Heal") * 30;
+				player.GetComponent<mve> ().heal (heal);
+				break;
+			}
+		case 4:
+			{
+				int heal = PlayerPrefs.GetInt ("DotHeal")*10;
+				player.GetComponent<mve> ().heal (heal);
+				Invoke ("DotHeal", 0.4f);
+				Invoke ("DotHeal", 0.8f);
+				Invoke ("DotHeal", 1.2f);
+				Invoke ("DotHeal", 1.6f);
+				Invoke ("DotHeal", 2f);
+				Invoke ("DotHeal", 2.4f);
+				Invoke ("DotHeal", 2.8f);
+				Invoke ("DotHeal", 3.2f);
+				break;
+			}
+		case 5:
+			{
+				Reflect.SetActive (true);
 				break;
 			}
 		}
