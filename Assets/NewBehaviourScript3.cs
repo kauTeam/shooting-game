@@ -12,7 +12,7 @@ public class NewBehaviourScript3 : MonoBehaviour {
     }
     public void gotoDungeon2()
     {
-        Autofade.LoadLevel("scene/1_monster", 1, 1, _fadeColor);
+        Autofade.LoadLevel("scene/2_monster part2", 1, 1, _fadeColor);
     }
     public void gotoTraining()
     {
