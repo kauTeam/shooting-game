@@ -25,6 +25,9 @@ public class use_Skill : MonoBehaviour {
     public Transform IceGun_pos2 = null;
     public Transform IceGun_pos3 = null;
 
+    public GameObject HellDrop = null;
+    public Transform HellDrop_pos = null;
+
     public GameObject shild=null;
     public GameObject player = null;
 	public Transform shild_pos=null;
@@ -85,6 +88,12 @@ public class use_Skill : MonoBehaviour {
                     Instantiate(IceGun, IceGun_pos3.position, IceGun_pos3.rotation);
                     break;
 
+                }
+            case 5:
+                {
+                    Instantiate(HellDrop, HellDrop_pos.position, HellDrop_pos.rotation);
+                    player.GetComponent<mve>().use_HellDrop();
+                    break;
                 }
         }
 	}

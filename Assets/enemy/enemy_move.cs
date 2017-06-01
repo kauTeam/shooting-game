@@ -12,6 +12,7 @@ public class enemy_move : MonoBehaviour {
     float poison_damage;
     float FireBall_Damage;
     float IceGun_Damage;
+    float HellDrop_Damage;
 	public GameObject result = null;
     public Transform loc = null;
     public ParticleSystem explosion;
@@ -95,6 +96,12 @@ public class enemy_move : MonoBehaviour {
             speed = 2f;
             Invoke("back_speed", 2f);
             
+        }
+        if (tan.tag == "Hell_Drop")
+        {
+            Destroy(tan.gameObject);
+            HellDrop_Damage = tan.gameObject.GetComponent<Hell_Drop>().HellDrop_Damage();
+            life -= HellDrop_Damage;
         }
         if (life < 0)
         {

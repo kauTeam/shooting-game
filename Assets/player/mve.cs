@@ -14,6 +14,7 @@ public class mve : MonoBehaviour {
 	public int mana_Recover=3;
 	public int HP = Defaultlife;
     public int MP = DefaultMP;
+    bool HellDrop_state = false;
    
 
 	void Start()
@@ -32,16 +33,36 @@ public class mve : MonoBehaviour {
 		if (Input.GetKey (KeyCode.LeftArrow)||Left_state) {
             MoveLeft();
 		}
-		if (cover) {
-			Invoke ("Mana_cover", 2);
-			MP += mana_Recover;
-			if (MP > maxMP) {
-				MP = maxMP;
-			}
-			cover = false;
-		}
+        if (HellDrop_state == false)
+        {
+            if (cover)
+            {
+                Invoke("Mana_cover", 2);
+                MP += mana_Recover;
+                if (MP > maxMP)
+                {
+                    MP = maxMP;
+                }
+                cover = false;
+            }
+        }
+        else
+        {
+            Invoke("recover_HellDrop", 5f);
+        }
     }
-	void Mana_cover()
+
+    public void use_HellDrop()
+    {
+        print("here2");
+        HellDrop_state = true;
+    }
+    public void recover_HellDrop()
+    {
+        print("here1");
+        HellDrop_state = false;
+    }
+    void Mana_cover()
 	{
 		cover = true;
 	}
