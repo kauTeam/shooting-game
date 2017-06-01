@@ -8,7 +8,7 @@ public class NewBehaviourScript3 : MonoBehaviour {
     Color _fadeColor = new Color(0f, 0f, 0f, 1f);
     public void gotoDungeon()
     {
-        Autofade.LoadLevel("scene/2_monster", 1, 1, _fadeColor);
+        Autofade.LoadLevel("scene/Round1/1-1", 1, 1, _fadeColor);
     }
     public void gotoDungeon2()
     {
