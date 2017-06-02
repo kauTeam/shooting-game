@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class result_button_control : MonoBehaviour {
 
 
-
+    Color _fadeColor = new Color(0f, 0f, 0f, 1f);
 
 #if UNITY_EDITOR
     public UnityEngine.Object next;
@@ -71,16 +71,16 @@ public class result_button_control : MonoBehaviour {
 	public void load_next()
 	{
 		print ("scene/"+sceneName1);
-		SceneManager.LoadScene ("scene/"+sceneName1);
-	}
+        Autofade.LoadLevel("scene/Round1/"+sceneName1, 1, 1, _fadeColor);
+    }
 	public void load_lv_select()
 	{
 		print ("scene/"+sceneName3);
-		SceneManager.LoadScene ("scene/"+sceneName3);
-	}
+        Autofade.LoadLevel("scene/"+sceneName3, 1, 1, _fadeColor);
+    }
 	public void load_now()
 	{
 		print ("scene/"+sceneName2);
-		SceneManager.LoadScene ("scene/"+sceneName2);
-	}
+        Autofade.LoadLevel("scene/Round1/" + sceneName2, 1, 1, _fadeColor);
+    }
 }
