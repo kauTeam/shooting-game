@@ -12,7 +12,11 @@ public class NewBehaviourScript3 : MonoBehaviour {
     }
     public void gotoDungeon2()
     {
-        Autofade.LoadLevel("scene/2_monster part2", 1, 1, _fadeColor);
+        Autofade.LoadLevel("scene/Round2/2-1", 1, 1, _fadeColor);
+    }
+    public void gotoDungeon3()
+    {
+        Autofade.LoadLevel("scene/Round3/3-1", 1, 1, _fadeColor);
     }
     public void gotoTraining()
     {
@@ -41,6 +45,14 @@ public class NewBehaviourScript3 : MonoBehaviour {
     public void gostory2()
     {
         SceneManager.LoadScene("scene/storyboard2");
+    }
+    public void gostory3()
+    {
+        SceneManager.LoadScene("scene/storyboard3");
+    }
+    public void gostory4()
+    {
+        SceneManager.LoadScene("scene/storyboard4");
     }
     public void reset()
 	{
