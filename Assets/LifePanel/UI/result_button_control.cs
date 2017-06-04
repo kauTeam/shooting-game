@@ -8,79 +8,25 @@ public class result_button_control : MonoBehaviour {
 
     Color _fadeColor = new Color(0f, 0f, 0f, 1f);
 
-#if UNITY_EDITOR
-    public UnityEngine.Object next;
-	public UnityEngine.Object now;
-	public UnityEngine.Object level_select;
-#endif
-
-    [HideInInspector]
-    [SerializeField]
-    string sceneName1 = "";
-	string sceneName2 = "";
-	string sceneName3 = "";
-
-#if UNITY_EDITOR
-    public void OnValidate()
-    {
-        sceneName1 = "";
-
-		if (next != null)
-        {
-			if (next.ToString().Contains("(UnityEngine.SceneAsset)"))
-            {
-				sceneName1 = next.name;
-            }
-            else
-            {
-				next = null;
-            }
-        }
-
-		sceneName2 = "";
-
-		if (now != null)
-		{
-			if (now.ToString().Contains("(UnityEngine.SceneAsset)"))
-			{
-				sceneName2 = now.name;
-			}
-			else
-			{
-				now = null;
-			}
-		}
-
-		sceneName3 = "";
-
-		if (level_select != null)
-		{
-			if (level_select.ToString().Contains("(UnityEngine.SceneAsset)"))
-			{
-				sceneName3 = level_select.name;
-			}
-			else
-			{
-				level_select = null;
-			}
-		}
-    }
-#endif
-
+	public int round;
+	public int level;
     // Use this for initialization
 	public void load_next()
 	{
-		print ("scene/"+sceneName1);
-        Autofade.LoadLevel("scene/Round1/"+sceneName1, 1, 1, _fadeColor);
+		if (level != 6) {
+			Autofade.LoadLevel ("scene/Round" + round.ToString () + "/" + round.ToString () + "-" + (level + 1).ToString (), 1, 1, _fadeColor);
+		} else {
+			Autofade.LoadLevel ("scene/Round" + (round+1).ToString () + "/" + (round+1).ToString () + "-1", 1, 1, _fadeColor);
+				
+		}
     }
 	public void load_lv_select()
 	{
-		print ("scene/"+sceneName3);
-        Autofade.LoadLevel("scene/"+sceneName3, 1, 1, _fadeColor);
+		Autofade.LoadLevel("scene/storyboard"+round.ToString(), 1, 1, _fadeColor);
     }
 	public void load_now()
 	{
-		print ("scene/"+sceneName2);
-        Autofade.LoadLevel("scene/Round1/" + sceneName2, 1, 1, _fadeColor);
+		Autofade.LoadLevel("scene/Round"+round.ToString()+"/"+round.ToString()+"-"+level.ToString(), 1, 1, _fadeColor);
+
     }
 }

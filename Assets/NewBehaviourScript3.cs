@@ -40,7 +40,7 @@ public class NewBehaviourScript3 : MonoBehaviour {
     }
     public void gostory1()
     {
-        SceneManager.LoadScene("scene/storyboard");
+        SceneManager.LoadScene("scene/storyboard1");
     }
     public void gostory2()
     {
@@ -89,5 +89,6 @@ public class NewBehaviourScript3 : MonoBehaviour {
 		PlayerPrefs.SetInt ("DotHeal", 1);
 		PlayerPrefs.SetInt ("Reflect", 1);
 
+		PlayerPrefs.SetFloat ("clear", 1.1f);
 	}
 }
