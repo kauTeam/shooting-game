@@ -22,7 +22,7 @@ public class result_button_control : MonoBehaviour {
     }
 	public void load_lv_select()
 	{
-		Autofade.LoadLevel("scene/storyboard"+round.ToString(), 1, 1, _fadeColor);
+		Autofade.LoadLevel("scene/StoryBoard/storyboard"+round.ToString(), 1, 1, _fadeColor);
     }
 	public void load_now()
 	{

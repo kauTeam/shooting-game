@@ -40,19 +40,19 @@ public class NewBehaviourScript3 : MonoBehaviour {
     }
     public void gostory1()
     {
-        SceneManager.LoadScene("scene/storyboard1");
+        SceneManager.LoadScene("scene/StoryBoard/storyboard1");
     }
     public void gostory2()
     {
-        SceneManager.LoadScene("scene/storyboard2");
+        SceneManager.LoadScene("scene/StoryBoard/storyboard2");
     }
     public void gostory3()
     {
-        SceneManager.LoadScene("scene/storyboard3");
+        SceneManager.LoadScene("scene/StoryBoard/storyboard3");
     }
     public void gostory4()
     {
-        SceneManager.LoadScene("scene/storyboard4");
+        SceneManager.LoadScene("scene/StoryBoard/storyboard4");
     }
     public void reset()
 	{
