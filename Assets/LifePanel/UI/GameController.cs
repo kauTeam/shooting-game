@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
 	public GameObject win=null;
 	public GameObject lose=null;
 	public GameObject player =null;
-
+	public float stage;
  	// Use this for initialization
     // Update is called once per frame
     void Update()
@@ -30,6 +30,14 @@ public class GameController : MonoBehaviour
             if (i == ene.LongLength - 1)
             {
 				win.SetActive (true);
+				float clear = PlayerPrefs.GetFloat ("clear");
+				if (clear <= stage) {
+					if (!((stage * 10) % 10 == 6)) {
+						PlayerPrefs.SetFloat ("clear", stage + 0.1f);
+					} else {
+						PlayerPrefs.SetFloat ("clear", stage*10 - 0.5f);
+					}
+				}
 				Destroy (lose);
                //  Autofade.LoadLevel("scene/main scene", 1, 1, _fadeColor);
             }
