@@ -84,7 +84,7 @@ public class enemy_tan : MonoBehaviour {
 				this.transform.Translate (new Vector3 (-0.5f, 0, -1) * speed * Time.deltaTime);
 			}
 		}
-		if (this.transform.position.z < -20||this.transform.position.x< -15||this.transform.position.x > 15) {
+		if (this.transform.position.z < -20||this.transform.position.x< -23||this.transform.position.x > 23) {
 			Destroy (this.gameObject);
 		}
 	}

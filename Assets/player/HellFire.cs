@@ -38,7 +38,7 @@ public class HellFire : MonoBehaviour
     void Update()
     {
        this.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * Speed);
-       if (this.transform.position.y < 4.5)
+       if (this.transform.position.y < 6.7)
        {
            Destroy(this.gameObject);
        }
