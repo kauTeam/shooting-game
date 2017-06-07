@@ -13,9 +13,11 @@ public class Fire_Ball : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("FireBall_Damage"))
+        if (PlayerPrefs.HasKey("FireBall"))
         {
-            Damage = PlayerPrefs.GetFloat("FireBall_Damage");
+			int level=PlayerPrefs.GetInt("FireBall");
+			float damage = PlayerPrefs.GetFloat ("Damage");
+			Damage = 3f+level*2f+level*damage*0.7f;
         }
         else
         {
@@ -36,7 +38,7 @@ public class Fire_Ball : MonoBehaviour
     void Update()
     {
         this.transform.Translate(new Vector3(0, 0, 5) * Time.deltaTime * Speed);
-        if (this.transform.position.y < 0.5)
+        if (this.transform.position.z > 25)
         {
             Destroy(this.gameObject);
         }

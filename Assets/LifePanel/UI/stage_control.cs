@@ -8,16 +8,19 @@ public class stage_control : MonoBehaviour {
 
 	Color _fadeColor = new Color(0f, 0f, 0f, 1f);
 	public int round;
-	public float[] level = new float[6];
+	public int[] level = new int[6];
 	public GameObject[] button = new GameObject[6];
 	public void Update()
 	{
 		if (!PlayerPrefs.HasKey ("clear")) {
-			PlayerPrefs.SetFloat ("clear", 1.1f);
+			PlayerPrefs.SetInt ("clear", 11);
 		}
-		float clear = PlayerPrefs.GetFloat ("clear");
+		int clear = PlayerPrefs.GetInt ("clear");
 		for (int i = 0; i < 6; i++) {
-			if (clear < level [i]) {
+			if (clear >= level [i]) {
+				button [i].SetActive (true);
+			}
+			else if (clear < level [i]) {
 				button [i].SetActive (false);
 			}
 		}

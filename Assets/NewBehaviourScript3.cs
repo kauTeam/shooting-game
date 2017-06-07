@@ -89,6 +89,6 @@ public class NewBehaviourScript3 : MonoBehaviour {
 		PlayerPrefs.SetInt ("DotHeal", 1);
 		PlayerPrefs.SetInt ("Reflect", 1);
 
-		PlayerPrefs.SetFloat ("clear", 1.1f);
+		PlayerPrefs.SetInt ("clear", 11);
 	}
 }

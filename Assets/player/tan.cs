@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class tan : MonoBehaviour {
 
-	public float destroy_pos = 10f;
+	float destroy_pos = 25f;
 	public float speed;
 	float damage;
 

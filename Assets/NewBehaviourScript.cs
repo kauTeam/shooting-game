@@ -109,7 +109,7 @@ public class NewBehaviourScript : MonoBehaviour {
 			PlayerPrefs.SetInt ("Reflect", 1);
 		}
 		if (!PlayerPrefs.HasKey ("clear")) {
-			PlayerPrefs.SetFloat ("clear", 1.1f);
+			PlayerPrefs.SetInt ("clear", 11);
 		}
 	}
 }
