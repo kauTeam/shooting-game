@@ -17,7 +17,7 @@ public class Ice_Gun : MonoBehaviour
         {
 			int level=PlayerPrefs.GetInt("IceGun");
 			float damage = PlayerPrefs.GetFloat ("Damage");
-			Damage = 4f + level * 2f + level * damage * 0.5f;
+			Damage = 2f + level * 2f + level * damage * 0.5f;
         }
         else
         {
@@ -38,7 +38,7 @@ public class Ice_Gun : MonoBehaviour
     void Update()
     {
         this.transform.Translate(new Vector3(0, -5, 0) * Time.deltaTime * Speed);
-        if (this.transform.position.y < 0.5)
+        if (this.transform.position.y > 25)
         {
             Destroy(this.gameObject);
         }

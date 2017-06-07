@@ -17,7 +17,7 @@ public class HellFire : MonoBehaviour
         {
 			int Level = PlayerPrefs.GetInt ("Meteor");
 			float damage = PlayerPrefs.GetFloat ("Damage");
-			Damage =10f+Level*2f+Level*damage;
+			Damage =6f+Level*2f+Level*damage;
         }
         else
         {

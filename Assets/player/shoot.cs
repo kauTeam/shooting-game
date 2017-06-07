@@ -61,7 +61,7 @@ public class shoot : MonoBehaviour
                 Invoke("set_shoot_state", attack_speed);
                 Invoke("set_Poison_state1", 3f);
                 GameObject tan = Instantiate(Poison, loc.position, loc.rotation);
-				float d = 2f + PlayerPrefs.GetInt ("Poison") * 0.5f + PlayerPrefs.GetInt ("Poison") * PlayerPrefs.GetFloat ("Damage") * 0.6f;
+				float d = 1f + PlayerPrefs.GetInt ("Poison") * 0.5f + PlayerPrefs.GetInt ("Poison") * PlayerPrefs.GetFloat ("Damage") * 0.6f;
 				tan.gameObject.GetComponent<Poison> ().setDamage (d);
                 tan.gameObject.GetComponent<Poison>().setSpeed(21+tan_speed);
                 shoot_state = false;
