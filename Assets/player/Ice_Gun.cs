@@ -13,9 +13,11 @@ public class Ice_Gun : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("IceGun_Damage"))
+        if (PlayerPrefs.HasKey("IceGun"))
         {
-            Damage = PlayerPrefs.GetFloat("IceGun_Damage");
+			int level=PlayerPrefs.GetInt("IceGun");
+			float damage = PlayerPrefs.GetFloat ("Damage");
+			Damage = 4f + level * 2f + level * damage * 0.5f;
         }
         else
         {

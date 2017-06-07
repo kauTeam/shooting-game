@@ -13,13 +13,15 @@ public class HellFire : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("HellFire_Damage"))
+        if (PlayerPrefs.HasKey("Meteor"))
         {
-            Damage = PlayerPrefs.GetFloat("HellFire_Damage");
+			int Level = PlayerPrefs.GetInt ("Meteor");
+			float damage = PlayerPrefs.GetFloat ("Damage");
+			Damage =10f+Level*2f+Level*damage;
         }
         else
         {
-            Damage = 40f;
+            Damage = 14f;
         }
         Speed = 4f;
     }

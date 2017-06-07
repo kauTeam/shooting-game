@@ -13,9 +13,11 @@ public class Fire_Ball : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("FireBall_Damage"))
+        if (PlayerPrefs.HasKey("FireBall"))
         {
-            Damage = PlayerPrefs.GetFloat("FireBall_Damage");
+			int level=PlayerPrefs.GetInt("FireBall");
+			float damage = PlayerPrefs.GetFloat ("Damage");
+			Damage = 7f+level*2f+level*damage*0.7f;
         }
         else
         {
