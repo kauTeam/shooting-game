@@ -54,6 +54,10 @@ public class NewBehaviourScript3 : MonoBehaviour {
     {
         SceneManager.LoadScene("scene/StoryBoard/storyboard4");
     }
+    public void quit()
+    {
+        Application.Quit();
+    }
     public void reset()
 	{
 		PlayerPrefs.SetInt ("lv",1);
