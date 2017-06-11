@@ -74,6 +74,7 @@ public class NewBehaviourScript3 : MonoBehaviour {
 		PlayerPrefs.SetFloat ("Max_Mana_re", 5f);
 		PlayerPrefs.SetFloat ("Hp", 1f);
 		PlayerPrefs.SetFloat ("Max_Hp", 5f);
+		PlayerPrefs.SetFloat ("tan_speed", 1f);
 
 		PlayerPrefs.SetInt ("coin", 1000);
 		PlayerPrefs.SetInt ("soul", 0);
@@ -81,7 +82,7 @@ public class NewBehaviourScript3 : MonoBehaviour {
 		PlayerPrefs.SetInt ("attack", 1);
 		PlayerPrefs.SetInt ("defence", 1);
 
-		PlayerPrefs.SetInt ("Metemor", 1);
+		PlayerPrefs.SetInt ("Meteor", 1);
 		PlayerPrefs.SetInt ("Poison", 1);
 		PlayerPrefs.SetInt ("FireBall", 1);
 		PlayerPrefs.SetInt ("IceGun", 1);

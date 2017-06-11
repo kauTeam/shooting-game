@@ -14,8 +14,8 @@ public class Exp : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		int exper=user.GetComponent<shoot_train>().returnExp();
-		int level =user.GetComponent<shoot_train>().returnLevel();
+		int exper=PlayerPrefs.GetInt("exp");
+		int level = PlayerPrefs.GetInt ("lv");
 		exp.text = "Exp: " + exper.ToString()+"/"+(level*10).ToString();
 
 	}
