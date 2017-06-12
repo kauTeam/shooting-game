@@ -46,6 +46,9 @@ public class NewBehaviourScript : MonoBehaviour {
 		if (!PlayerPrefs.HasKey ("Max_attack_speed")) {
 			PlayerPrefs.SetFloat ("Max_attack_speed", 5f);
 		}
+		if (!PlayerPrefs.HasKey ("tan_speed")) {
+			PlayerPrefs.SetFloat ("tan_speed", 1f);
+		}
 		if (!PlayerPrefs.HasKey ("Mana")) {
 			PlayerPrefs.SetFloat ("Mana", 1f);
 		}
@@ -77,7 +80,7 @@ public class NewBehaviourScript : MonoBehaviour {
 		if (!PlayerPrefs.HasKey ("defence")) {
 			PlayerPrefs.SetInt ("defence", 1);
 		}
-		if (!PlayerPrefs.HasKey ("Metemor")) {
+		if (!PlayerPrefs.HasKey ("Meteor")) {
 			PlayerPrefs.SetInt ("Metemor", 1);
 		
 		}

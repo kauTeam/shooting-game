@@ -14,9 +14,7 @@ public class Lv : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		int level=user.GetComponent<shoot_train>().returnLevel();
-		//level = 1;
-		lv.text = "LV: " + level.ToString();
+		lv.text = "LV: " + PlayerPrefs.GetInt("lv").ToString();
 
 	}
 }

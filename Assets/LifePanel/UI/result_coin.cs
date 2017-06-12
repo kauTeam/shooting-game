@@ -10,12 +10,11 @@ public class result_coin : MonoBehaviour {
 	int result;
 	void Start () {
 		result = PlayerPrefs.GetInt ("get_coin");
-		PlayerPrefs.SetInt ("get_coin", 0);
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+		PlayerPrefs.SetInt ("get_coin", 0);
 		text.text = result.ToString () + "++";
 	}
 }
