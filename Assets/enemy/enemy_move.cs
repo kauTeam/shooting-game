@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class enemy_move : MonoBehaviour {
 
-
+    Animator ani=null;
+    int condition = 0;
 	int movePoint=3;
 	public float speed=5f;
 	public float MaxHp=20f;
@@ -28,11 +29,12 @@ public class enemy_move : MonoBehaviour {
 	}
 	void Start()
 	{
+        ani = gameObject.GetComponent<Animator>();
 		life = MaxHp;
 	}
 
 	void Update () {
-		if (this.transform.position.x >movePoint+1||this.transform.position.x <movePoint-1) {
+        if (this.transform.position.x >movePoint+1||this.transform.position.x <movePoint-1) {
 			if (this.transform.position.x > movePoint) {
 				this.transform.Translate (new Vector3 (1, 0, 0) * -1 * speed * Time.deltaTime);
 			}
@@ -54,7 +56,8 @@ public class enemy_move : MonoBehaviour {
 	{
 		if (tan.tag == "user_tan") {
 			Destroy (tan.gameObject);
-			life=life-tan.gameObject.GetComponent<tan>().getDamage();
+            ani.SetTrigger("damage");
+            life =life-tan.gameObject.GetComponent<tan>().getDamage();
 //			if (life < 0) {
 //				Destroy (this.gameObject);
 //                Instantiate(explosion, transform.position, Quaternion.identity);	
