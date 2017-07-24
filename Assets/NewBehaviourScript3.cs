@@ -54,6 +54,18 @@ public class NewBehaviourScript3 : MonoBehaviour {
     {
         SceneManager.LoadScene("scene/StoryBoard/storyboard4");
     }
+    public void gostory5()
+    {
+        SceneManager.LoadScene("scene/StoryBoard/storyboard5");
+    }
+    public void gostory6()
+    {
+        SceneManager.LoadScene("scene/StoryBoard/storyboard6");
+    }
+    public void gostory7()
+    {
+        SceneManager.LoadScene("scene/StoryBoard/storyboard7");
+    }
     public void quit()
     {
         Application.Quit();
