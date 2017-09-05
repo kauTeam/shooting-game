@@ -17,8 +17,9 @@ public class enemy_move : MonoBehaviour {
 	public GameObject result = null;
     public Transform loc = null;
     public ParticleSystem explosion;
-    public int check_Poison_count = 0; 
+    public int check_Poison_count = 0;
     // Update is called once per frame
+
     public float getHP()
 	{
 		return life;
@@ -89,7 +90,6 @@ public class enemy_move : MonoBehaviour {
             Destroy(tan.gameObject);
             FireBall_Damage = tan.gameObject.GetComponent<Fire_Ball>().FireBall_Damage();
             life -= FireBall_Damage;
-
         }
         if (tan.tag == "Ice_Gun")
         {

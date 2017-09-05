@@ -15,11 +15,11 @@ public class mve : MonoBehaviour {
 	public int HP = Defaultlife;
     public int MP = DefaultMP;
     bool HellDrop_state = false;
-   
 
-	void Start()
+
+    void Start()
 	{
-		maxHP = (int)(80f+PlayerPrefs.GetFloat ("Hp")*20);
+        maxHP = (int)(80f+PlayerPrefs.GetFloat ("Hp")*20);
 		maxMP = (int)(80f+PlayerPrefs.GetFloat ("Mana")*20);
 		mana_Recover = (int)(2f + PlayerPrefs.GetFloat ("Mana_re"));
 		MP = maxMP;
@@ -124,11 +124,15 @@ public class mve : MonoBehaviour {
 
     void OnTriggerEnter(Collider tan)
 	{
+
 		if (tan.tag == "enemy_tan") {
-			Destroy (tan.gameObject);
-			HP=HP-tan.gameObject.GetComponent<enemy_tan>().getDamage();
-			if (HP <= 0) {
-				Destroy (this.gameObject);
+            //Destroy (tan.gameObject);
+           
+            HP = HP - tan.gameObject.GetComponent<enemy_tan>().getDamage();
+            Destroy(tan.gameObject);
+
+            if (HP <= 0) {
+                Destroy (this.gameObject);
 			}
 		}
 	}

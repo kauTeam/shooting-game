@@ -11,11 +11,14 @@ public class use_Skill : MonoBehaviour {
     public Transform HellFire_pos3 = null;
     public Transform HellFire_pos4 = null;
     public Transform HellFire_pos5 = null;
-
-	public GameObject shield = null;
+    public GameObject shield = null;
 	public GameObject Reflect = null;
 
+    public Transform point;
+    public GameObject fx_Magiccircle_p;
 
+    public GameObject shield_p;
+ 
 
     public GameObject FireBall = null;
     public Transform FireBall_pos = null;
@@ -32,10 +35,15 @@ public class use_Skill : MonoBehaviour {
     public GameObject player = null;
 	public Transform shild_pos=null;
 
-	int attack_Type;
-	int defend_Type;
+    public GameObject paticleobj = null;
+    public GameObject paticleobj2 = null;
+
+    public float mage_time=0;
+   int attack_Type;
+    int defend_Type;
+
 	void Start () {
-		if (PlayerPrefs.HasKey ("attack")) {
+       if (PlayerPrefs.HasKey ("attack")) {
 			attack_Type = PlayerPrefs.GetInt ("attack");
 		} else {
 			attack_Type = 1;
@@ -54,9 +62,22 @@ public class use_Skill : MonoBehaviour {
 		player.GetComponent<mve> ().heal (heal);
 	}
 
-	// Update is called once per frame
-	void Update () {
-	}
+    // Update is called once per frame
+    void Update() {
+        if (mage_time > 0)
+        {
+            MagicParticle();
+            mage_time -= 0.1f;
+        }
+
+        if (shield.activeSelf)
+        {
+            ShieldParticle();
+        }
+     
+            
+       // MagicParticle();
+    }
 
 	public void attack()
 	{
@@ -78,6 +99,7 @@ public class use_Skill : MonoBehaviour {
               }
             case 3:
                 {
+                    mage_time = 1f;
                     Instantiate(FireBall, FireBall_pos.position, FireBall_pos.rotation);
                     break;
                 }
@@ -102,12 +124,12 @@ public class use_Skill : MonoBehaviour {
 		switch (defend_Type) {
 		case 1:
 			{
-				Instantiate (shild, shild_pos.position, shild_pos.rotation);
+                   Instantiate (shild, shild_pos.position, shild_pos.rotation);
 				break;
 			}
 		case 2:
 			{
-				shield.SetActive (true);
+                   shield.SetActive (true);
 				break;
 			}
 		case 3:
@@ -137,7 +159,25 @@ public class use_Skill : MonoBehaviour {
 			}
 		}
 	}
-    
+
+
+    public void MagicParticle()
+    {
+        paticleobj = Instantiate(fx_Magiccircle_p) as GameObject;
+        // paticleobj.transform.position = point.position;
+        paticleobj.transform.position = new Vector3(point.position.x, point.position.y, point.position.z);
+      //  paticleobj.transform.Translate(new Vector3(point.position.x, point.position.y, point.position.z));
+        Destroy(paticleobj, 0.05f);
+    }
+
+    public void ShieldParticle()
+    {
+        paticleobj2 = Instantiate(shield_p) as GameObject;
+        paticleobj2.transform.position = new Vector3(point.position.x, point.position.y+2, point.position.z);
+        //  paticleobj.transform.Translate(new Vector3(point.position.x, point.position.y, point.position.z));
+        Destroy(paticleobj2, 0.05f);
+    }
+
 }
 
 

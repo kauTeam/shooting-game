@@ -100,7 +100,6 @@ public class User_SKillCoolDown : MonoBehaviour {
 		mana = player.gameObject.GetComponent<mve>().getMP();
 		if (mana >=deffence_mana[deffence])
 		{
-			print (deffence);
 			if (skills[1].currentCoolDown[deffence] >= skills[1].cooldown[deffence])
 			{
 				player.gameObject.GetComponent<use_Skill> ().defend ();

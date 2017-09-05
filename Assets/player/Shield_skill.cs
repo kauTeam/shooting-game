@@ -13,25 +13,30 @@ public class Shield_skill : MonoBehaviour {
 	{
 		gage = (float)(PlayerPrefs.GetInt ("Shild") * 50);
 		time = 1.5f+PlayerPrefs.GetInt ("Shild")*0.3f;
-	}
+        print("start");
+    }
 
 
-	void Update () {
+    void Update () {
 		Invoke ("destroy", time);
 		this.transform.position = pos.position;
 	}
 	void OnTriggerEnter(Collider tan)
 	{
 		if (tan.tag == "enemy_tan") {
-			Destroy (tan.gameObject);
+			
 			gage=gage-tan.gameObject.GetComponent<enemy_tan>().getDamage();
 			if (gage <= 0) {
-				this.gameObject.SetActive(false);
-			}
-		}
+                gage = (float)(PlayerPrefs.GetInt("Shild") * 50);
+               this.gameObject.SetActive(false);
+            }
+            Destroy(tan.gameObject);
+        }
 	}
 	void destroy()
 	{
-		this.gameObject.SetActive(false);
+        print("destroyed");
+        gage = (float)(PlayerPrefs.GetInt("Shild") * 50);
+        this.gameObject.SetActive(false);
 	}
 }
